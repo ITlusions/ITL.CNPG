@@ -1,0 +1,15 @@
+apiVersion: v2
+name: itl.cnpg
+version: 0.1.0
+description: A Helm chart for deploying a CNPG cluster and database
+type: application
+keywords:
+  - cnpg
+  - postgresql
+  - database
+maintainers:
+  - name: Niels Weistra
+    email: n.weistra@itlusions.nl
+sources:
+  - https://github.com/itlusions/itl.cnpg
+dependencies: []

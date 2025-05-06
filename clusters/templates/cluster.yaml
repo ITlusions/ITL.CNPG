@@ -1,0 +1,20 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Release.Name }}-custom
+spec:
+  instances: {{ .Values.cluster.instances }}
+
+  postgresql:
+    parameters:
+      max_worker_processes: "{{ .Values.cluster.parameters.max_worker_processes }}"
+    pg_hba:
+      - host all all all md5
+
+  primaryUpdateStrategy: {{ .Values.cluster.primaryUpdateStrategy }}
+
+  storage:
+    size: {{ .Values.cluster.storage.size }}
+    {{- if .Values.cluster.storage.storageClass }}
+    storageClass: {{ .Values.cluster.storage.storageClass }}
+    {{- end }}
