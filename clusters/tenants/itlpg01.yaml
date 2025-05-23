@@ -1,0 +1,9 @@
+cluster:
+  instances: 2
+  parameters:
+    max_worker_processes: "60"
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: 5Gi
+    # Uncomment the following line to specify a storage class
+    storageClass: "openebs-hostpath"
