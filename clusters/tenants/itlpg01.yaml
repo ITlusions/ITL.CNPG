@@ -5,5 +5,9 @@ cluster:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 5Gi
-    # Uncomment the following line to specify a storage class
     storageClass: "openebs-hostpath"
+
+ingress:
+  host: "itlpg01.cnpg.itlusions.com"
+  serviceName: "itlpg01-pg-cluster"
+  servicePort: 5432
