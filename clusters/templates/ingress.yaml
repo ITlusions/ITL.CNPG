@@ -8,5 +8,5 @@ spec:
   routes:
     - match: HostSNI(`{{ .Values.ingress.host }}`)
       services:
-        - name: {{ .Values.ingress.serviceName }}
+        - name: {{ .Release.Name }}-cluster-rw
           port: {{ .Values.ingress.servicePort }}
