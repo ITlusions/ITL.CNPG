@@ -18,8 +18,3 @@ spec:
     {{- if .Values.cluster.storage.storageClass }}
     storageClass: {{ .Values.cluster.storage.storageClass }}
     {{- end }}
-
-
-  tls:
-    secretName: {{ .Release.Name }}-{{ .Values.cluster.name }}-tls
-
