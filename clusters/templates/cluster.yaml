@@ -1,7 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: {{ .Release.Name }}-cluster
+  name: {{ .Release.Name }}-{{ .Values.cluster.name }}
 spec:
   instances: {{ .Values.cluster.instances }}
 
@@ -18,3 +18,16 @@ spec:
     {{- if .Values.cluster.storage.storageClass }}
     storageClass: {{ .Values.cluster.storage.storageClass }}
     {{- end }}
+
+  {{- if .Values.cluster.secrets.superuser }}
+  superuserSecret:
+    name: {{ .Values.cluster.secrets.superuser }}
+  {{- end }}
+
+  {{- if .Values.cluster.secrets.replication }}
+  replicationSecret:
+    name: {{ .Values.cluster.secrets.replication }}
+  {{- end }}
+  tls:
+    secretName: {{ .Release.Name }}-{{ .Values.cluster.name }}-tls
+

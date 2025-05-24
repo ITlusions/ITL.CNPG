@@ -1,0 +1,2 @@
+kubectl get secret {{ .Values.cluster.name }}-cluster-app -o jsonpath="{.data.username}" | base64 --decode
+kubectl get secret {{ .Values.cluster.name }}-cluster-app -o jsonpath="{.data.password}" | base64 --decode
