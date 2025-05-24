@@ -3,6 +3,8 @@ kind: Certificate
 metadata:
   name: {{ .Release.Name }}-cluster-tls
   namespace: {{ .Release.Namespace }}
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
 spec:
   secretName: {{ .Release.Name }}-cluster-tls
   issuerRef:
