@@ -1,0 +1,13 @@
+cluster:
+  name: itlsyn01-prd
+  instances: 2
+  parameters:
+    max_worker_processes: "60"
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: 5Gi
+    storageClass: "openebs-hostpath"
+
+ingress:
+  host: "itlsyn01-prd.cnpg.itlusions.com"
+  servicePort: 5432

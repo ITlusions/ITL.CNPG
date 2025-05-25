@@ -1,9 +1,13 @@
 cluster:
+  name: itlkc01-prd
   instances: 2
   parameters:
     max_worker_processes: "60"
   primaryUpdateStrategy: unsupervised
   storage:
     size: 5Gi
-    # Uncomment the following line to specify a storage class
     storageClass: "openebs-hostpath"
+
+ingress:
+  host: "itlkc01-prd.cnpg.itlusions.com"
+  servicePort: 5432
