@@ -6,7 +6,6 @@ cluster:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 5Gi
-    storageClass: "openebs-hostpath"
 
 ingress:
   host: "itlkc01-prd.cnpg.itlusions.com"
